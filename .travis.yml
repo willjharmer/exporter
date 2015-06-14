@@ -20,4 +20,4 @@ install:
   - python setup.py install
 
 script:
-  - make -i
+  - make -i 
