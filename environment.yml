@@ -1,4 +1,4 @@
-name: exporter
+name: ex
 dependencies:
 - flask=0.10.1=py27_1
 - itsdangerous=0.24=py27_0

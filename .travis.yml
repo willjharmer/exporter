@@ -1,4 +1,7 @@
 language: python
+cache:
+  - apt
+  - pip
 python:
   - 2.7
 notifications:
@@ -19,8 +22,7 @@ before_install:
   - conda info -a
 # Install packages
 install:
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
-  - source activate test-environment
+  - conda env create && source activate test-environment
 # Run test
 script:
   - lettuce 
