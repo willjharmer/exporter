@@ -1,5 +1,5 @@
 [run]
-source = NLExporter
+source = app
 omit =
     */python?.?/*
     */lib-python/?.?/*.py
