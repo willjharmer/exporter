@@ -16,8 +16,10 @@ dependencies:
 - zlib=1.2.8=0
 - pip:
   - argh==0.26.1
+  - colorama==0.3.3
   - coverage==3.7.1
   - extras==0.0.3
+  - flask-testing==0.4.2
   - fuzzywuzzy==0.5.0
   - lettuce==0.2.20
   - linecache2==1.0.0
@@ -28,7 +30,9 @@ dependencies:
   - python-levenshtein==0.12.0
   - python-mimeparse==0.1.4
   - python-subunit==1.1.0
+  - python-termstyle==0.1.10
   - pyyaml==3.11
+  - rednose==0.4.3
   - requests==2.7.0
   - sh==1.11
   - six==1.9.0
@@ -37,4 +41,3 @@ dependencies:
   - traceback2==1.4.0
   - unittest2==1.0.1
   - watchdog==0.8.3
-

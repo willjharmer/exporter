@@ -21,14 +21,14 @@ def run_tests():
 
     print >> sys.stderr, "Running nosetest at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'nosetests')
+    subprocess.call(r'nosetests --rednose --force-color')
 
 def run_feature_tests():
     "Run lettuce features"
 
     print >> sys.stderr, "Running lettuce at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'lettuce')
+    subprocess.call(r'lettuce --verbosity=1')
 
 def getext(filename):
     "Get the file extension."
@@ -57,7 +57,7 @@ def main():
     """
 
     while 1:
-    
+
         event_handler = ChangeHandler()
         observer = Observer()
         observer.schedule(event_handler, BASEDIR, recursive=True)
