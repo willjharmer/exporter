@@ -9,8 +9,8 @@ Feature: Configuring flask app
     Then I have <debug> DEBUG and <testing> TESTING env variables
 
     Examples:
-      |config |debug  | testing |
-      |Base   |False  |False    |
-      |Dev    |True   |False    |
-      |Test   |False  |True     |
+      |config     |debug  | testing |
+      |Release    |False  |False    |
+      |Dev        |True   |False    |
+      |Test       |False  |True     |
 

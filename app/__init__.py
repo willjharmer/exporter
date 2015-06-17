@@ -1,11 +1,13 @@
 from flask import Flask
+from configs import Dev
 
 class AppFactory():
 
     @staticmethod
-    def create():
+    def create(config=Dev):
 
         app = Flask(__name__)
+        app.config.from_object(config)
 
         @app.route('/')
         def index():
