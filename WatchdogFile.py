@@ -28,7 +28,7 @@ def run_feature_tests():
 
     print >> sys.stderr, "Running lettuce at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'lettuce --verbosity=1')
+    subprocess.call(r'lettuce --tag=-future')
 
 def getext(filename):
     "Get the file extension."

@@ -21,7 +21,7 @@ def run_feature_tests():
 
     print >> sys.stderr, "Running lettuce at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'lettuce')
+    subprocess.call(['lettuce', '--tag', 'wip'])
 
 def getext(filename):
     "Get the file extension."
@@ -39,7 +39,7 @@ class ChangeHandler(FileSystemEventHandler):
 
         if event.is_directory:
             return
-        if getext(event.src_path) == '.py':
+        if getext(event.src_path) in ['.py','.haml','.coffee']:
             run_feature_tests()
 
 def main():

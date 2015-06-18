@@ -27,7 +27,7 @@ install:
 
 # Run test
 script:
-  - lettuce
+  - make test
 # Calculate coverage
 after_success:
   - coveralls --config_file .coveragerc

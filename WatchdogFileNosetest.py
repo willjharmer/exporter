@@ -21,7 +21,7 @@ def run_tests():
 
     print >> sys.stderr, "Running nosetest at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'nosetests --rednose --force-color')
+    subprocess.call(['nosetests', '--rednose', '--force-color'])
 
 def getext(filename):
     "Get the file extension."

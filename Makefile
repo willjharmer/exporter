@@ -16,7 +16,7 @@ dev:
 test: | features spec
 
 spec:
-	nosetests
+	nosetests --rednose --force-color
 
 features:
-	lettuce
+	lettuce --tag=-future --tag=-wip
