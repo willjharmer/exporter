@@ -1,12 +1,11 @@
 from app import AppFactory
-from app.configs import Test
 import multiprocessing 
 import time
 
 class TestServer():
 
     def create_app(self):
-        return AppFactory.create(Test)
+        return AppFactory.create()
 
     def __init__(self):
         """
@@ -24,8 +23,8 @@ class TestServer():
         try:
             self._spawn_live_server()
         finally:
-            self._post_teardown()
-            self._terminate_live_server()
+            self.teardown()
+            self.terminate_live_server()
 
     def get_server_url(self):
         """
@@ -55,11 +54,11 @@ class TestServer():
             except:
                 timeout -= 1
 
-    def _post_teardown(self):
+    def teardown(self):
         if getattr(self, '_ctx', None) is not None:
             self._ctx.pop()
             del self._ctx
 
-    def _terminate_live_server(self):
+    def terminate_live_server(self):
         if self._process:
             self._process.terminate() 

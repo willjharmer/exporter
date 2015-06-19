@@ -3,9 +3,9 @@ Feature: Select a table from the list of available tables for export
   As a user
   I want the webpage to allow me to select the table I wish to export from
 
-  @future
+  @wip
+  @TestServer
   Scenario: I want to select 'table A'
-    Given I am on the export webpage
-    When I click on the table list select box
-    Then I get a list of all the available tables
-    And I can select one of them 
+    Given I go to "http://localhost:5000/"
+    When I select "Table A" from "tables"
+    Then the "Table A" option from "tables" should be selected

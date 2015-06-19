@@ -13,4 +13,3 @@ class Dev(Release):
 
 class Test(Release):
     TESTING                     = True
-    LIVESERVER_PORT              = 4444
