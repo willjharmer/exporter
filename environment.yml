@@ -25,10 +25,13 @@ dependencies:
   - flask-testing==0.4.2
   - flask-wtf==0.11
   - fuzzywuzzy==0.5.0
+  - gnureadline==6.3.3
   - hamlish-jinja==0.3.2
+  - ipython==3.1.0
   - lettuce==0.2.20
   - lettuce-webdriver==0.3.5
   - linecache2==1.0.0
+  - liveandletdie==0.0.6
   - mock==1.0.1
   - multiprocessing==2.6.2.1
   - pathtools==0.1.2
