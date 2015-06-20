@@ -5,17 +5,17 @@ Feature: Accessing the app through the web
   @Browser
   Scenario: Accessing the index page at '/'
     When I visit "http://localhost:5000/" 
-    Then I should see "Exporter"
+    Then the page title should be "Exporter"
 
   @Browser
   Scenario: I see a web-form on the page
-    When I visit "http://localhost:5000/" 
+    When I visit "http://127.0.0.1:5000/" 
     Then I should see a form that goes to "/export"
 
   @Browser
   Scenario: Accessing a bad route shows a 404 page
-    When I visit "http://localhost:5000/random_route" 
-    Then I should see "404 web page"
+    When I visit "http:/127.0.0.1:5000/random_route" 
+    Then the page title should be "Page not found - Exporter"
     And I should see a link with the url "/"
 
   #@wip

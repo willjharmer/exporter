@@ -22,7 +22,7 @@ class TestServer():
 
         try:
             self._spawn_live_server()
-        finally:
+        except:
             self.teardown()
             self.terminate_live_server()
 
@@ -30,7 +30,7 @@ class TestServer():
         """
         Return the url of the test server
         """
-        return 'http://localhost:%s' % self.port
+        return 'http://127.0.0.1:%s' % self.port
 
     def _spawn_live_server(self):
         self._process = None
