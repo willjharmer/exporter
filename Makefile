@@ -13,10 +13,5 @@ server:
 dev:
 	python manage.py runserver
 
-test: | features spec
-
-spec:
-	nosetests --rednose --force-color
-
-features:
-	lettuce --tag=-future --tag=-wip
+test:
+	python test_runner.py test

@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from hamlish_jinja import HamlishExtension
 from flask_wtf import Form
+from wtforms import SelectField
 from configs import Dev
 
 class AppFactory():
@@ -16,7 +17,8 @@ class AppFactory():
 
         @app.route('/')
         def index():
-            return render_template('index.haml')
+            form = ExportForm()
+            return render_template('index.haml', form=form)
 
         return app
 
@@ -30,3 +32,6 @@ class AppFactory():
 
         for e in [404, 500]:
             app.errorhandler(e)(render_error)
+
+class ExportForm(Form):
+    tables = SelectField(choices=[("TableA","TableA"),("DataTableB","DataTableB"),("DataTableC","DataTableC")])

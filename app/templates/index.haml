@@ -2,5 +2,7 @@
   %head
     %title -> Exporter
   %body
-    %form action="/export"
-      This is where the exporter form will go
+    %form name="export_form" method="POST" action="/export"
+      {{ form.hidden_tag()}}
+      {{ form.tables.label}} {{ form.tables }}
+      %input type="submit" value="Download"

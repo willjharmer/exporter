@@ -17,9 +17,3 @@ Feature: Accessing the app through the web
     When I visit "http:/127.0.0.1:5000/random_route" 
     Then the page title should be "Page not found - Exporter"
     And I should see a link with the url "/"
-
-  #@wip
-  #Scenario: When we have an internal error we display a 500 error page
-    #When I POST to '/' route of the app
-    #Then I see the 500 web page
-    #And there is a link back to the homepage
