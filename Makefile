@@ -11,7 +11,7 @@ server:
 	python manage.py runserver --host 0.0.0.0
 
 dev:
-	python manage.py runserver
+	python manage.py runserver --port 6363
 
 test:
 	python test_runner.py test
