@@ -58,4 +58,4 @@ dependencies:
   - unittest2==1.0.1
   - watchdog==0.8.3
   - wtforms==2.0.2
-
+  - wtforms-test==0.1.1
