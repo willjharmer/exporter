@@ -19,16 +19,9 @@ def get_now():
 def run_tests():
     "Run nosetests"
 
-    print >> sys.stderr, "Running nosetest at %s" % get_now()
+    print >> sys.stderr, "Running tests at %s" % get_now()
     os.chdir(BASEDIR)
-    subprocess.call(r'nosetests --rednose --force-color')
-
-def run_feature_tests():
-    "Run lettuce features"
-
-    print >> sys.stderr, "Running lettuce at %s" % get_now()
-    os.chdir(BASEDIR)
-    subprocess.call(r'lettuce --tag=-future')
+    subprocess.call(r'python test_runner.py test')
 
 def getext(filename):
     "Get the file extension."
@@ -47,7 +40,6 @@ class ChangeHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         if getext(event.src_path) == '.py':
-            run_feature_tests()
             run_tests()
 
 def main():
